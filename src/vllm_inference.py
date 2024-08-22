@@ -33,7 +33,7 @@ def LLMPredictorWrapper(model_name_or_path, tensor_parallel_size, sampling_param
             generated_text: List[str] = []
             for output in outputs:
                 prompt.append(output.prompt)
-                generated_text.append(' '.join([o.text for o in output.outputs]))
+                generated_text.append([o.text for o in output.outputs])
             return {
                 "prompt": prompt,
                 "generated_text": generated_text,
