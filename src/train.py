@@ -1,5 +1,9 @@
+from .configs import get_configs
 
-def main(args):
+def main():
+    # initialize training arguments and data arguments
+    args = get_configs()
+
     # distributed initialize
 
     # set seed
@@ -22,4 +26,4 @@ def main(args):
 
 
 if __name__ == '__main__':
-    pass
+    main()
